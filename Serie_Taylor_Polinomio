@@ -1,0 +1,44 @@
+import math
+h=1 
+
+def fder(x,orden):
+    if(orden==1):
+        return (-0.4*(x**3))+(-0.45*(x**2))+(-1*(x))+(-0.25)
+    elif(orden==2):
+        return (-1.2*(x**2))+(-0.90*(x))+(-1)
+    elif(orden==3):
+        return (-2.4*(x))+(-0.90)
+    elif(orden==4):
+        return (-2.4)
+    
+    
+def f(x):
+    return (-0.1*(x**4))+(-0.15*(x**3))+(-0.5*(x**2))+(-0.25*x)+(1.2)
+        
+
+def faprox(x,orden):
+    xaux=h
+    funcion=float(1.2)
+    cont=1
+    conta=1
+    print "|%-5s|%-16s|%-16s|%-10s|"%('-----','----------------','----------------','----------')
+    print "|%-5s|%-16s|%-16s|%-10s|"%('Val','S.ANA','S.APR','ERROR.rel')
+    print "|%-5s|%-16s|%-16s|%-10s|"%('-----','----------------','----------------','----------')
+    if(x==0):
+        funcion=float(1.2)
+    elif(x>0):
+        while xaux<=x+h:
+            er=abs((((f(xaux-h))-(funcion))/(f(xaux-h)))*100)
+            #er=Error relativo
+            print "|%-5.0f|%-16.4f|%-16.4f|%-10.4f|"%((xaux-h),f(xaux-h),funcion,er)
+            print "|%-5s|%-16s|%-16s|%-10s|"%('-----','----------------','----------------','----------')
+            while conta<=orden:
+                funcion+=((fder(xaux-h,conta)*(h**conta))/(math.factorial(conta)))
+                conta+=1  
+            xaux+=h  
+            conta=1
+        
+    return 0
+
+print "Indique hasta que tope desea calcular"
+faprox(input(),4)
