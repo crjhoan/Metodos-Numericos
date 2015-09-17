@@ -161,7 +161,7 @@ def der1(x,h):
         cont=0
     global cad1,cad2,cad3
     graficas(x1,dervv,der11,der22,der33,dervvv,der111,der222,der333,dervvvv,der1111,der2222,der3333,cad1,cad2,cad3,"Dverd","Datra","Dcent","Ddela")
-    graficas(x1,ev11,evabs11,er11,erp11,ev22,evabs22,er22,erp22,ev33,evabs33,er33,erp33,cad1,cad2,cad3,"Everd","EveAbs","ErRel","ErRelpor")
+    graficas(x1,ev11,evabs11,er11,erp11,ev22,evabs22,er22,erp22,ev33,evabs33,er33,erp33,cad1+" Der Atras",cad2+" Der Central",cad3+" Der Delante","Everd","EveAbs","ErRel","ErRelpor")
     return 0  
         
 der1(x,h) 
