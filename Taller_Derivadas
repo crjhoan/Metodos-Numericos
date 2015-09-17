@@ -78,20 +78,20 @@ def der1(x,h):
                 der1=(((f(x,cont))-(f((x-h),cont)))/(h))
                 ev1=derv-der1
                 evabs1=abs(derv-der1)
-                er1=(der1-(((f(x-h,cont))-(f((x-2*h),cont)))/(h)))/(der1)
-                erp1=((der1-(((f(x-h,cont))-(f((x-2*h),cont)))/(h)))/(der1))*100
+                er1=(((derv)-(der1))/(derv))
+                erp1=(((derv)-(der1))/(derv))*100
             
                 der2=(((f(x+h,cont))-(f((x-h),cont)))/(2*h))
                 ev2=derv-der2
                 evabs2=abs(derv-der2)
-                er2=(der2-(((f(x,cont))-(f((x-2*h),cont)))/(2*h)))/(der2)
-                erp2=(der2-(((f(x,cont))-(f((x-2*h),cont)))/(2*h)))/(der2)*100
+                er2=(((derv)-(der2))/(derv))
+                erp2=(((derv)-(der2))/(derv))*100
             
                 der3=(((f(x+h,cont))-(f((x),cont)))/((x+h)-(x)))
                 ev3=derv-der3
                 evabs3=abs(derv-der3)
-                er3=(der3-(((f(x,cont))-(f((x-h),cont)))/((x)-(x-h))))/(der3)
-                erp3=(der3-(((f(x,cont))-(f((x-h),cont)))/((x)-(x-h))))/(der3)*100
+                er3=(((derv)-(der3))/(derv))
+                erp3=(((derv)-(der3))/(derv))*100
                 
                 if(cont==0):
                     x1.append(x)
